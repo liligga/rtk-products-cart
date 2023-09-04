@@ -8,7 +8,7 @@ const activeLinkClass = ({ isActive }) => {
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 z-10 flex justify-center align-center h-16 col-span-4 bg-neutral-50 border-b bg-opacity-75 backdrop-blur backdrop-filter border-b-slate-300 [&>*]:flex  [&>*]:items-center [&>*]:gap-6 [&>*]:list-none">
+    <nav className="sticky top-0 z-10 flex justify-center align-center h-16 col-span-4 bg-neutral-50 border-b bg-opacity-75 backdrop-blur backdrop-filter border-b-slate-300 [&>*]:flex  [&>*]:items-center [&>*]:list-none [&>*]:gap-2 [&>*]:sm:gap-6 ">
       <ul>
         <li>
           <NavLink to="/" className={activeLinkClass}>
@@ -18,6 +18,16 @@ const Navbar = () => {
         <li>
           <NavLink to="/counter" className={activeLinkClass}>
             Counter
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/user" className={activeLinkClass}>
+            User
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/posts" className={activeLinkClass}>
+            Posts
           </NavLink>
         </li>
         <li>
