@@ -1,6 +1,8 @@
 import {Link} from 'react-router-dom'
+import {useState, useEffect} from 'react'
 
-const posts = [
+
+const allPosts = [
   {
     id: 1,
     title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
@@ -24,6 +26,12 @@ const posts = [
 ]
 
 const PostsListPage = () => {
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    setPosts(allPosts) 
+  }, [])
+
   return (
     <div className="w-full flex flex-col justify-center gap-3">
       <span className='text-2xl col-span-full'>Список постов</span>

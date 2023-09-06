@@ -1,16 +1,17 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
-const currentPost = {
-  userId: 1,
-  id: 3,
-  title: 'ea molestias quasi exercitationem repellat qui ipsa sit aut',
-  body: 'et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio cillum dignissimos ducimus'
-}
 
 const PostEditPage = () => {
-  const [post, setPost] = useState(currentPost)
+  const { id } = useParams()
+  const [post, setPost] = useState({})
   const navigate = useNavigate()
+
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      .then((response) => response.json())
+      .then((data) => setPost(data))
+  })
 
   const handleChange = (e) => {
     setPost({ ...post, [e.target.name]: e.target.value })
