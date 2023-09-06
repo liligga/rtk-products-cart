@@ -1,10 +1,16 @@
-const items = [
+import { useState } from "react";
+
+import { DeleteIcon } from "./UI/icons";
+
+const todoItems = [
   { id: 1, name: "Item 1" },
   { id: 2, name: "Item 2" },
   { id: 3, name: "Item 3" },
 ];
 
 const TodoTable = () => {
+  const [items, setItems] = useState(todoItems);
+
   const handleDeleteClick = (id) => {
     console.log(id);
   };
@@ -28,14 +34,13 @@ const TodoTable = () => {
                 onClick={() => handleCheckClick(item.id)}
               />
             </div>
-            <div>{item.id}</div>
             <div className="flex-grow flex-shrink-0">{item.name}</div>
             <div>
               <button
                 className="text-red-500 px-2 rounded-sm text-base"
                 onClick={() => handleDeleteClick(item.id)}
               >
-                &#128465;
+                <DeleteIcon />
               </button>
             </div>
           </div>
