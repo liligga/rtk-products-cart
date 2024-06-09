@@ -31,6 +31,16 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
+          <NavLink to="products" className={activeLinkClass}>
+            Products
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/cart" className={activeLinkClass}>
+            Cart
+          </NavLink>
+        </li>
+        <li>
           <NavLink to="/todos" className={activeLinkClass}>
             Todos
           </NavLink>

@@ -6,6 +6,8 @@ import TodoListPage from "./pages/TodoListPage";
 import UserPage from "./pages/UserPage";
 import PostEditPage from "./pages/PostEditPage";
 import PostsListPage from "./pages/PostsListPage";
+import CartPage from "./pages/CartPage";
+import Products from "./pages/Products";
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
           <Route path="counter" element={<CounterPage />} />
           <Route path="user" element={<UserPage />} />
           <Route path="todos" element={<TodoListPage />} />
+          <Route path="cart" element={<CartPage />} />
+          <Route path="products" element={<Products />} />
           <Route path="posts" element={<PostsListPage />} />
           <Route path="posts/:id/edit" element={<PostEditPage />} />
           <Route
